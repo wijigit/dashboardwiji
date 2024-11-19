@@ -40,7 +40,8 @@ class MahasiswaResource extends Resource
                 Tables\Columns\TextColumn::make('jurusan.name')->searchable()->sortable(),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('jurusan_id')
+                ->relationship('jurusan', 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
